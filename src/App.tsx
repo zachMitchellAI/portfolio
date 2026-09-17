@@ -7,6 +7,7 @@ import Background from './components/Background';
 import HueRibbon from './components/HueRibbon';
 import Intro from './components/Intro';
 import Questions from './components/Questions';
+import SectionCard from './components/SectionCard';
 import SiteFooter from './components/SiteFooter';
 import SiteHeader from './components/SiteHeader';
 import TechStack from './components/TechStack';
@@ -36,9 +37,10 @@ const centerFullHeight = {
  * WorkExperience (own internal ribbons) > Questions (own internal ribbon) >
  * SiteFooter.
  *
- * HueRibbon is intentionally 140% wide; `overflowX: 'clip'` on the Container
- * keeps that overflow from creating a page scrollbar (and, unlike `hidden`,
- * does not turn the Container into a scroll container). No App-level ribbon
+ * HueRibbon is full-bleed (100vw wide), so the Container must NOT clip
+ * overflow — that would cut the escaped frames back to 1200px. Instead the
+ * root `<main>` uses `overflowX: 'clip'` (never a scroll container) to absorb
+ * the 100vw-vs-scrollbar (~15px) overflow. No App-level ribbon
  * sits directly above Questions or inside WorkExperience — those components
  * already render their own.
  */
@@ -63,7 +65,11 @@ function App() {
   // The fixed Vanta layer stays mounted across all states so it never has to
   // tear down / re-create the WebGL effect on a data-state transition.
   return (
-    <>
+    // Root-level containment: the full-bleed ribbons are 100vw wide, which
+    // exceeds documentElement.clientWidth by the scrollbar width (~15px).
+    // `clip` — unlike `hidden` — never creates a scroll container, and it does
+    // not affect the fixed Background.
+    <Box component="main" sx={{ overflowX: 'clip' }}>
       <Background />
       {state.status === 'loading' && (
         <Box sx={centerFullHeight}>
@@ -83,11 +89,16 @@ function App() {
       {state.status === 'success' && (
         <>
           <SiteHeader socials={state.data.socials} />
-          {/* pb: 8 per spec; overflowX: 'clip' contains the ribbons' 140% width. */}
-          <Container maxWidth="lg" sx={{ pb: 8, overflowX: 'clip' }}>
+          {/* pb: 8 per spec; no overflow clipping here — ribbons escape to full viewport width. */}
+          <Container maxWidth="lg" sx={{ pb: 8 }}>
+          {/* mt: 4 — first card must not hug the sticky AppBar (spec 18). */}
+          <SectionCard sx={{ mt: 4 }}>
             <Intro data={state.data} />
+          </SectionCard>
             <HueRibbon />
-            <TechStack data={state.data} />
+            <SectionCard>
+              <TechStack data={state.data} />
+            </SectionCard>
             <HueRibbon />
             <WorkExperience data={state.data} />
             <Questions data={state.data} />
@@ -95,7 +106,7 @@ function App() {
           <SiteFooter socials={state.data.socials} />
         </>
       )}
-    </>
+    </Box>
   );
 }
 

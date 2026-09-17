@@ -18,6 +18,9 @@
 declare module 'vanta/dist/vanta.net.min' {
   export interface VantaEffect {
     destroy: () => void
+    // The effect instance exposes its THREE.Scene after init (used by
+    // Background.tsx to recolor the line materials post-construction).
+    scene?: import('three').Scene
   }
 
   export interface VantaNetOptions {
@@ -38,7 +41,12 @@ declare module 'vanta/dist/vanta.net.min' {
     showDots?: boolean
   }
 
-  const NET: (options: VantaNetOptions) => VantaEffect
+  export type VantaFactory = (options: VantaNetOptions) => VantaEffect
+
+  // The pre-built UMD wrapper exports the factory as `module.exports = { default: factoryFn }`,
+  // and bundler interop (dev pre-bundle vs production build) may or may not unwrap that
+  // object, so the resolved default is either the factory itself or an object wrapping it.
+  const NET: VantaFactory | { default: VantaFactory }
   export default NET
 }
 

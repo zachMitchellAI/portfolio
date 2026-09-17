@@ -8,6 +8,16 @@ import type { WorkExperience } from '../types';
 import { assetUrl } from '../utils/assetUrl';
 import HueRibbon from './HueRibbon';
 import ImageCarousel from './ImageCarousel';
+import SectionCard from './SectionCard';
+import { useColorMode } from './ColorModeProvider';
+
+/**
+ * Logos whose artwork is (predominantly) monochrome black and therefore
+ * vanishes on the dark background — e.g. streamline.svg fills its wordmark
+ * with `fill="black"`. Colored brand logos (formstack green, pace blue) are
+ * NOT listed here and render untouched in both modes.
+ */
+const DARK_LOGOS = new Set(['/logos/streamline.svg']);
 
 export interface WorkExperienceItemProps {
   /** One `data['work-experience']` entry. */
@@ -64,6 +74,12 @@ function EntryList({ title, items }: EntryListProps) {
  */
 export default function WorkExperienceItem({ entry }: WorkExperienceItemProps) {
   const [logoFailed, setLogoFailed] = useState(false);
+  // Dark-mode contrast: invert black-only logos (see DARK_LOGOS). Read the
+  // mode reactively via useColorMode() — useTheme().palette.mode is not
+  // reactive on the CSS-vars theme.
+  const { resolvedMode } = useColorMode();
+  const isDark = (resolvedMode ?? 'light') === 'dark';
+  const invertLogo = isDark && DARK_LOGOS.has(entry.logo);
   const companyName = companyNameFromId(entry.id);
   const showLogo = entry.logo.trim().length > 0 && !logoFailed;
 
@@ -74,40 +90,47 @@ export default function WorkExperienceItem({ entry }: WorkExperienceItemProps) {
       sx={{ width: '100%', maxWidth: 720, textAlign: 'left' }}
     >
       <HueRibbon />
-      {showLogo ? (
-        <Box
-          component="img"
-          src={assetUrl(entry.logo)}
-          alt={companyName}
-          onError={() => setLogoFailed(true)}
-          sx={{
-            width: { xs: '60%', md: '30%' },
-            height: 'auto',
-            display: 'block',
-          }}
-        />
-      ) : (
-        <Box
-          aria-hidden="true"
-          sx={{
-            width: { xs: '60%', md: '30%' },
-            height: 72,
-            border: '2px dashed',
-            borderColor: 'divider',
-            borderRadius: 2,
-          }}
-        />
-      )}
-      <Box>
-        <Typography variant="h4">{companyName}</Typography>
-        <Typography variant="body2" color="text.secondary">
-          {entry.role} · {entry.dates}
-        </Typography>
-      </Box>
-      <Typography variant="body1">{entry.description}</Typography>
-      <ImageCarousel images={entry.gallery} />
-      <EntryList title="Product features" items={entry['product-features']} />
-      <EntryList title="Personal experience" items={entry['personal-experience']} />
+      {/* The card lives inside the article's centered max-width column; the
+          inner Stack preserves the original spacing between content blocks. */}
+      <SectionCard>
+        <Stack spacing={2}>
+          {showLogo ? (
+            <Box
+              component="img"
+              src={assetUrl(entry.logo)}
+              alt={companyName}
+              onError={() => setLogoFailed(true)}
+              sx={{
+                width: { xs: '60%', md: '30%' },
+                height: 'auto',
+                display: 'block',
+                filter: invertLogo ? 'invert(1)' : 'none',
+              }}
+            />
+          ) : (
+            <Box
+              aria-hidden="true"
+              sx={{
+                width: { xs: '60%', md: '30%' },
+                height: 72,
+                border: '2px dashed',
+                borderColor: 'divider',
+                borderRadius: 2,
+              }}
+            />
+          )}
+          <Box>
+            <Typography variant="h4">{companyName}</Typography>
+            <Typography variant="body2" color="text.secondary">
+              {entry.role} · {entry.dates}
+            </Typography>
+          </Box>
+          <Typography variant="body1">{entry.description}</Typography>
+          <ImageCarousel images={entry.gallery} />
+          <EntryList title="Product features" items={entry['product-features']} />
+          <EntryList title="Personal experience" items={entry['personal-experience']} />
+        </Stack>
+      </SectionCard>
     </Stack>
   );
 }

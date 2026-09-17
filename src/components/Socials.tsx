@@ -7,6 +7,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
 import type { SocialsMap } from '../types';
 import { assetUrl } from '../utils/assetUrl';
+import { useColorMode } from './ColorModeProvider';
 
 export interface SocialsProps {
   /** The `socials` map straight from the portfolio JSON. */
@@ -39,6 +40,12 @@ interface SocialLinkButtonProps {
  */
 function SocialLinkButton({ slug, icon, link }: SocialLinkButtonProps) {
   const [failed, setFailed] = useState(false);
+  // Social glyphs are monochrome brand glyphs with no explicit fill (they
+  // default to black), so they vanish on the dark background — invert them
+  // to white in dark mode. Read reactively via useColorMode() because
+  // useTheme().palette.mode is not reactive on the CSS-vars theme.
+  const { resolvedMode } = useColorMode();
+  const isDark = (resolvedMode ?? 'light') === 'dark';
 
   return (
     <IconButton
@@ -60,7 +67,7 @@ function SocialLinkButton({ slug, icon, link }: SocialLinkButtonProps) {
           height={24}
           width={24}
           onError={() => setFailed(true)}
-          sx={{ display: 'block' }}
+          sx={{ display: 'block', filter: isDark ? 'invert(1)' : 'none' }}
         />
       )}
     </IconButton>

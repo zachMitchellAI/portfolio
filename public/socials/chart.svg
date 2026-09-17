@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="500"
+   height="500"
+   viewBox="0 0 132.29166 132.29167"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   sodipodi:docname="chart.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.4866305"
+     inkscape:cx="189.01805"
+     inkscape:cy="286.55406"
+     inkscape:window-width="2556"
+     inkscape:window-height="1386"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g3" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g3"
+       transform="translate(1.0069159,0.18078359)">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:2.56796;stroke-linecap:round;stroke-miterlimit:5.7"
+         id="rect1"
+         width="34.395832"
+         height="102.6557"
+         x="5.137711"
+         y="23.065773"
+         rx="9.0580025"
+         ry="9.0580025" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:2.58088;stroke-linecap:round;stroke-miterlimit:5.7"
+         id="rect2"
+         width="34.395832"
+         height="60.854168"
+         x="46.528687"
+         y="65.474358"
+         rx="8.7933187"
+         ry="8.7933187" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:2.56797;stroke-linecap:round;stroke-miterlimit:5.7"
+         id="rect3"
+         width="34.395832"
+         height="119.51284"
+         x="87.919662"
+         y="6.208622"
+         rx="9.0580015"
+         ry="9.0580015" />
+    </g>
+  </g>
+</svg>
