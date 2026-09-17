@@ -1,8 +1,12 @@
-import { createContext, useContext, useMemo } from 'react';
-import type { ReactNode } from 'react';
-import { ThemeProvider, useColorScheme, getInitColorSchemeScript } from '@mui/material/styles';
-import { theme, COLOR_MODE_STORAGE_KEY } from '../theme';
-import type { Mode } from '../theme';
+import { createContext, useContext, useMemo } from "react";
+import type { ReactNode } from "react";
+import {
+  ThemeProvider,
+  useColorScheme,
+  getInitColorSchemeScript,
+} from "@mui/material/styles";
+import { theme, COLOR_MODE_STORAGE_KEY } from "../theme";
+import type { Mode } from "../theme";
 
 export interface ColorModeContextValue {
   /**
@@ -10,7 +14,7 @@ export interface ColorModeContextValue {
    * OS preference" (the default until the user picks a mode manually).
    * Undefined before client hydration.
    */
-  mode: 'light' | 'dark' | 'system' | undefined;
+  mode: "light" | "dark" | "system" | undefined;
   /** The actually rendered mode, after resolving 'system' against the OS. */
   resolvedMode: Mode | undefined;
   /** Flip light ↔ dark and persist the explicit choice to localStorage. */
@@ -27,15 +31,20 @@ function ColorModeState({ children }: { children: ReactNode }) {
   const { mode, systemMode, setMode } = useColorScheme();
 
   const contextValue = useMemo<ColorModeContextValue>(() => {
-    const resolvedMode = mode === 'system' ? systemMode : mode;
+    const resolvedMode = mode === "system" ? systemMode : mode;
     return {
       mode,
       resolvedMode,
-      toggleColorMode: () => setMode(resolvedMode === 'dark' ? 'light' : 'dark'),
+      toggleColorMode: () =>
+        setMode(resolvedMode === "dark" ? "light" : "dark"),
     };
   }, [mode, systemMode, setMode]);
 
-  return <ColorModeContext.Provider value={contextValue}>{children}</ColorModeContext.Provider>;
+  return (
+    <ColorModeContext.Provider value={contextValue}>
+      {children}
+    </ColorModeContext.Provider>
+  );
 }
 
 /**
@@ -66,7 +75,7 @@ export default ColorModeProvider;
 export function useColorMode(): ColorModeContextValue {
   const context = useContext(ColorModeContext);
   if (!context) {
-    throw new Error('useColorMode must be used inside <ColorModeProvider>');
+    throw new Error("useColorMode must be used inside <ColorModeProvider>");
   }
   return context;
 }

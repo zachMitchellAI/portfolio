@@ -26,7 +26,8 @@ interface SectionCardProps {
  */
 export default function SectionCard({ children, sx }: SectionCardProps) {
   const { resolvedMode } = useColorMode();
-  const isDark = (resolvedMode ?? "light") === "dark";  return (
+  const isDark = (resolvedMode ?? "light") === "dark";
+  return (
     <Box
       sx={[
         {

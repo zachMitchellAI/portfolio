@@ -1,12 +1,13 @@
 {
   "intro": {
-    "header": "Hey there! You can call me Zach (It's easier that way)",
+    "header": "Hey there! You can call me Zach!",
+    "sub": "(It's easier that way)",
     "body": "Great to meet you! I'm an agentic, Front-end leaning software engineer... but wait, what does that mean?",
     "bullet-points": [
       "I love building apps using modern web-technologies (React, TypeScript, Vue)",
       "While also building for things behind the scenes (Node, Next.js, Vite, Bun)",
       "With AI being an accelerator in every stage (Cursor, OpenCode)",
-      "... And even running _inside_ the code itself! (LangChain Certified)"
+      "...And even running inside the code itself! (LangChain)"
     ]
   },
   "tech-stack": [

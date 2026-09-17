@@ -1,7 +1,7 @@
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import type { SocialsMap } from '../types';
-import Socials from './Socials';
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import type { SocialsMap } from "../types";
+import Socials from "./Socials";
 
 export interface SiteFooterProps {
   /** The `socials` map straight from the portfolio JSON. */
@@ -16,12 +16,12 @@ export default function SiteFooter({ socials }: SiteFooterProps) {
     <Box
       component="footer"
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
         gap: 1,
         py: 3,
-        textAlign: 'center',
+        textAlign: "center",
       }}
     >
       <Socials socials={socials} />

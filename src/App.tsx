@@ -1,30 +1,30 @@
-import { useEffect, useState } from 'react';
-import Box from '@mui/material/Box';
-import CircularProgress from '@mui/material/CircularProgress';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Background from './components/Background';
-import HueRibbon from './components/HueRibbon';
-import Intro from './components/Intro';
-import Questions from './components/Questions';
-import SectionCard from './components/SectionCard';
-import SiteFooter from './components/SiteFooter';
-import SiteHeader from './components/SiteHeader';
-import TechStack from './components/TechStack';
-import WorkExperience from './components/WorkExperience';
-import { loadPortfolio } from './data/loadPortfolio';
-import type { PortfolioData } from './types';
+import { useEffect, useState } from "react";
+import Box from "@mui/material/Box";
+import CircularProgress from "@mui/material/CircularProgress";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Background from "./components/Background";
+import HueRibbon from "./components/HueRibbon";
+import Intro from "./components/Intro";
+import Questions from "./components/Questions";
+import SectionCard from "./components/SectionCard";
+import SiteFooter from "./components/SiteFooter";
+import SiteHeader from "./components/SiteHeader";
+import TechStack from "./components/TechStack";
+import WorkExperience from "./components/WorkExperience";
+import { loadPortfolio } from "./data/loadPortfolio";
+import type { PortfolioData } from "./types";
 
 type AppState =
-  | { status: 'loading' }
-  | { status: 'error' }
-  | { status: 'success'; data: PortfolioData };
+  | { status: "loading" }
+  | { status: "error" }
+  | { status: "success"; data: PortfolioData };
 
 const centerFullHeight = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  minHeight: '100vh',
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  minHeight: "100vh",
   px: 2,
 } as const;
 
@@ -45,17 +45,17 @@ const centerFullHeight = {
  * already render their own.
  */
 function App() {
-  const [state, setState] = useState<AppState>({ status: 'loading' });
+  const [state, setState] = useState<AppState>({ status: "loading" });
 
   useEffect(() => {
     let cancelled = false;
     loadPortfolio()
       .then((data) => {
-        if (!cancelled) setState({ status: 'success', data });
+        if (!cancelled) setState({ status: "success", data });
       })
       .catch((error: unknown) => {
-        console.error('[App] Failed to load portfolio data:', error);
-        if (!cancelled) setState({ status: 'error' });
+        console.error("[App] Failed to load portfolio data:", error);
+        if (!cancelled) setState({ status: "error" });
       });
     return () => {
       cancelled = true;
@@ -69,15 +69,22 @@ function App() {
     // exceeds documentElement.clientWidth by the scrollbar width (~15px).
     // `clip` — unlike `hidden` — never creates a scroll container, and it does
     // not affect the fixed Background.
-    <Box component="main" sx={{ overflowX: 'clip' }}>
+    <Box component="main" sx={{ overflowX: "clip" }}>
       <Background />
-      {state.status === 'loading' && (
+      {state.status === "loading" && (
         <Box sx={centerFullHeight}>
           <CircularProgress />
         </Box>
       )}
-      {state.status === 'error' && (
-        <Box sx={{ ...centerFullHeight, flexDirection: 'column', gap: 1, textAlign: 'center' }}>
+      {state.status === "error" && (
+        <Box
+          sx={{
+            ...centerFullHeight,
+            flexDirection: "column",
+            gap: 1,
+            textAlign: "center",
+          }}
+        >
           <Typography variant="h6" component="h1">
             Couldn&apos;t load portfolio data
           </Typography>
@@ -86,15 +93,15 @@ function App() {
           </Typography>
         </Box>
       )}
-      {state.status === 'success' && (
+      {state.status === "success" && (
         <>
           <SiteHeader socials={state.data.socials} />
           {/* pb: 8 per spec; no overflow clipping here — ribbons escape to full viewport width. */}
           <Container maxWidth="lg" sx={{ pb: 8 }}>
-          {/* mt: 4 — first card must not hug the sticky AppBar (spec 18). */}
-          <SectionCard sx={{ mt: 4 }}>
-            <Intro data={state.data} />
-          </SectionCard>
+            {/* mt: 4 — first card must not hug the sticky AppBar (spec 18). */}
+            <SectionCard sx={{ mt: 4 }}>
+              <Intro data={state.data} />
+            </SectionCard>
             <HueRibbon />
             <SectionCard>
               <TechStack data={state.data} />

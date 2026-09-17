@@ -1,12 +1,12 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Fade from '@mui/material/Fade';
-import IconButton from '@mui/material/IconButton';
-import MobileStepper from '@mui/material/MobileStepper';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ImageNotSupportedOutlinedIcon from '@mui/icons-material/ImageNotSupportedOutlined';
-import { assetUrl } from '../utils/assetUrl';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Fade from "@mui/material/Fade";
+import IconButton from "@mui/material/IconButton";
+import MobileStepper from "@mui/material/MobileStepper";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import ImageNotSupportedOutlinedIcon from "@mui/icons-material/ImageNotSupportedOutlined";
+import { assetUrl } from "../utils/assetUrl";
 
 export interface ImageCarouselProps {
   /** Gallery image paths (public/ relative); resolved through `assetUrl`. */
@@ -20,7 +20,9 @@ export interface ImageCarouselProps {
  */
 export default function ImageCarousel({ images }: ImageCarouselProps) {
   const [index, setIndex] = React.useState(0);
-  const [failed, setFailed] = React.useState<ReadonlySet<string>>(() => new Set<string>());
+  const [failed, setFailed] = React.useState<ReadonlySet<string>>(
+    () => new Set<string>(),
+  );
 
   if (images.length === 0) {
     return null;
@@ -40,7 +42,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
     setIndex((current) => Math.min(maxIndex, Math.min(current, maxIndex) + 1));
 
   const handleError = (event: React.SyntheticEvent<HTMLDivElement>) => {
-    const brokenSrc = event.currentTarget.getAttribute('src') ?? '';
+    const brokenSrc = event.currentTarget.getAttribute("src") ?? "";
     setFailed((current) => {
       if (current.has(brokenSrc)) {
         return current;
@@ -52,33 +54,33 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: "100%" }}>
       <Box
         sx={{
-          position: 'relative',
-          width: '100%',
-          aspectRatio: '16 / 9',
-          overflow: 'hidden',
+          position: "relative",
+          width: "100%",
+          aspectRatio: "16 / 9",
+          overflow: "hidden",
           borderRadius: 2,
-          border: '1px solid',
-          borderColor: 'divider',
-          bgcolor: 'background.paper',
+          border: "1px solid",
+          borderColor: "divider",
+          bgcolor: "background.paper",
         }}
       >
         <Fade in appear key={activeIndex}>
-          <Box sx={{ width: '100%', height: '100%' }}>
+          <Box sx={{ width: "100%", height: "100%" }}>
             {isBroken ? (
               <Box
                 sx={{
-                  position: 'absolute',
-                  inset: '8px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  border: '2px dashed',
-                  borderColor: 'divider',
+                  position: "absolute",
+                  inset: "8px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  border: "2px dashed",
+                  borderColor: "divider",
                   borderRadius: 1.5,
-                  color: 'text.disabled',
+                  color: "text.disabled",
                 }}
               >
                 <ImageNotSupportedOutlinedIcon />
@@ -90,10 +92,10 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
                 alt=""
                 onError={handleError}
                 sx={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'contain',
-                  display: 'block',
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                  display: "block",
                 }}
               />
             )}
@@ -106,13 +108,13 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
             disabled={atStart}
             size="small"
             sx={{
-              position: 'absolute',
-              top: '50%',
-              left: '8px',
-              transform: 'translateY(-50%)',
-              bgcolor: 'background.paper',
-              border: '1px solid',
-              borderColor: 'divider',
+              position: "absolute",
+              top: "50%",
+              left: "8px",
+              transform: "translateY(-50%)",
+              bgcolor: "background.paper",
+              border: "1px solid",
+              borderColor: "divider",
             }}
           >
             <ChevronLeftIcon fontSize="small" />
@@ -125,13 +127,13 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
             disabled={atEnd}
             size="small"
             sx={{
-              position: 'absolute',
-              top: '50%',
-              right: '8px',
-              transform: 'translateY(-50%)',
-              bgcolor: 'background.paper',
-              border: '1px solid',
-              borderColor: 'divider',
+              position: "absolute",
+              top: "50%",
+              right: "8px",
+              transform: "translateY(-50%)",
+              bgcolor: "background.paper",
+              border: "1px solid",
+              borderColor: "divider",
             }}
           >
             <ChevronRightIcon fontSize="small" />
@@ -164,7 +166,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
               <ChevronRightIcon fontSize="small" />
             </IconButton>
           }
-          sx={{ mt: 1, bgcolor: 'transparent' }}
+          sx={{ mt: 1, bgcolor: "transparent" }}
         />
       )}
     </Box>

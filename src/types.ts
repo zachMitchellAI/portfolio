@@ -7,49 +7,50 @@
  */
 
 export interface Intro {
-  header: string
-  body: string
-  'bullet-points': string[]
+  header: string;
+  sub: string;
+  body: string;
+  "bullet-points": string[];
 }
 
 export interface TechItem {
-  name: string
-  'img-src': string
-  link: string
+  name: string;
+  "img-src": string;
+  link: string;
 }
 
 export interface WorkExperience {
   /** Stable slug for the entry (e.g. "streamline"); also used for asset paths. */
-  id: string
-  logo: string
-  role: string
-  dates: string
-  description: string
-  'product-features': string[]
-  'personal-experience': string[]
-  gallery: string[]
+  id: string;
+  logo: string;
+  role: string;
+  dates: string;
+  description: string;
+  "product-features": string[];
+  "personal-experience": string[];
+  gallery: string[];
 }
 
 export interface QA {
-  q: string
-  a: string
+  q: string;
+  a: string;
 }
 
 export interface SocialLink {
-  icon: string
-  link: string
+  icon: string;
+  link: string;
 }
 
 /**
  * Keys are social slugs (e.g. "linked-in", "github", "ai-knowledge-base");
  * new entries are plug-and-play.
  */
-export type SocialsMap = Record<string, SocialLink>
+export type SocialsMap = Record<string, SocialLink>;
 
 export interface PortfolioData {
-  intro: Intro
-  'tech-stack': TechItem[]
-  'work-experience': WorkExperience[]
-  questions: QA[]
-  socials: SocialsMap
+  intro: Intro;
+  "tech-stack": TechItem[];
+  "work-experience": WorkExperience[];
+  questions: QA[];
+  socials: SocialsMap;
 }

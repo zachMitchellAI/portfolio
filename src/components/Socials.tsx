@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
-import Stack from '@mui/material/Stack';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
-import type { SocialsMap } from '../types';
-import { assetUrl } from '../utils/assetUrl';
-import { useColorMode } from './ColorModeProvider';
+import { useState } from "react";
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import Stack from "@mui/material/Stack";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
+import type { SocialsMap } from "../types";
+import { assetUrl } from "../utils/assetUrl";
+import { useColorMode } from "./ColorModeProvider";
 
 export interface SocialsProps {
   /** The `socials` map straight from the portfolio JSON. */
@@ -20,8 +20,8 @@ export interface SocialsProps {
  */
 function fallbackGlyph(key: string) {
   const normalized = key.toLowerCase();
-  if (normalized.includes('github')) return <GitHubIcon />;
-  if (normalized.includes('linkedin') || normalized.includes('linked-in')) {
+  if (normalized.includes("github")) return <GitHubIcon />;
+  if (normalized.includes("linkedin") || normalized.includes("linked-in")) {
     return <LinkedInIcon />;
   }
   return <LanguageOutlinedIcon />;
@@ -45,7 +45,7 @@ function SocialLinkButton({ slug, icon, link }: SocialLinkButtonProps) {
   // to white in dark mode. Read reactively via useColorMode() because
   // useTheme().palette.mode is not reactive on the CSS-vars theme.
   const { resolvedMode } = useColorMode();
-  const isDark = (resolvedMode ?? 'light') === 'dark';
+  const isDark = (resolvedMode ?? "light") === "dark";
 
   return (
     <IconButton
@@ -67,7 +67,7 @@ function SocialLinkButton({ slug, icon, link }: SocialLinkButtonProps) {
           height={24}
           width={24}
           onError={() => setFailed(true)}
-          sx={{ display: 'block', filter: isDark ? 'invert(1)' : 'none' }}
+          sx={{ display: "block", filter: isDark ? "invert(1)" : "none" }}
         />
       )}
     </IconButton>

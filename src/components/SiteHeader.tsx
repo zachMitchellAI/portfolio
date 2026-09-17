@@ -1,10 +1,10 @@
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import type { SocialsMap } from '../types';
-import Socials from './Socials';
-import ColorModeToggle from './ColorModeToggle';
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import type { SocialsMap } from "../types";
+import Socials from "./Socials";
+import ColorModeToggle from "./ColorModeToggle";
 
 export interface SiteHeaderProps {
   /** The `socials` map straight from the portfolio JSON. */
