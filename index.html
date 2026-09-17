@@ -5,6 +5,43 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zach | Portfolio</title>
+    <script>
+      // No-FOUC color-mode init — a static inline copy of what MUI's
+      // `<InitColorSchemeScript defaultMode="system"
+      // modeStorageKey="portfolio-color-mode" />` emits (that component only
+      // renders on the server, which a Vite CSR app never has). It applies the
+      // persisted/explicit color scheme to <html data-mui-color-scheme="…">
+      // before first paint, so a stored dark choice survives reloads without
+      // flashing light first.
+      //
+      // NOTE: the attribute is only consumed by the theme stylesheets if
+      // `theme.ts` configures `colorSchemeSelector` (MUI v9 defaults to
+      // 'media' when only `cssVariables: true` + light/dark schemes are set —
+      // see assembly report).
+      (function () {
+        try {
+          var colorScheme = '';
+          var mode = localStorage.getItem('portfolio-color-mode') || 'system';
+          var dark = localStorage.getItem('mui-color-scheme-dark') || 'dark';
+          var light = localStorage.getItem('mui-color-scheme-light') || 'light';
+          if (mode === 'system') {
+            // Follow the OS preference until the user picks a mode manually.
+            colorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? dark : light;
+          }
+          if (mode === 'light') {
+            colorScheme = light;
+          }
+          if (mode === 'dark') {
+            colorScheme = dark;
+          }
+          if (colorScheme) {
+            document.documentElement.setAttribute('data-mui-color-scheme', colorScheme);
+          }
+        } catch (e) {
+          /* localStorage/matchMedia unavailable — fall through to defaults. */
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

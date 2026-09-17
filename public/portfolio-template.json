@@ -1,0 +1,106 @@
+{
+  "intro": {
+    "header": "Hey there! You can call me Zach (it's easier that way)",
+    "body": "Great to meet you! I'm an agentic, Front-end leaning software engineer... but wait, what does that mean?",
+    "bullet-points": [
+      "I love building apps using modern web-technologies (React, TypeScript, Vue)",
+      "While also building for things behind the scenes (Node, Next.js, Vite, Bun)",
+      "With AI being an accelerator in every stage (Cursor, OpenCode)",
+      "... And even running _inside_ the code itself! (LangChain Certified)"
+    ]
+  },
+  "tech-stack": [
+    { "name": "JavaScript", "img-src": "/techstack/js.svg", "link": "https://developer.mozilla.org/docs/Web/JavaScript" },
+    { "name": "TypeScript", "img-src": "/techstack/ts.svg", "link": "https://typescriptlang.org" },
+    { "name": "Node.js", "img-src": "/techstack/node.svg", "link": "https://nodejs.org" },
+    { "name": "Next.js", "img-src": "/techstack/nextjs.svg", "link": "https://nextjs.org" },
+    { "name": "Vite", "img-src": "/techstack/vite.svg", "link": "https://vite.dev" },
+    { "name": "LangChain", "img-src": "/techstack/langchain.svg", "link": "https://langchain.com" },
+    { "name": "Bun", "img-src": "/techstack/bun.svg", "link": "https://bun.sh" },
+    { "name": "React", "img-src": "/techstack/react.svg", "link": "https://react.dev" },
+    { "name": "Material UI", "img-src": "/techstack/mui.svg", "link": "https://mui.com" },
+    { "name": "TanStack", "img-src": "/techstack/tanstack.svg", "link": "https://tanstack.com" }
+  ],
+  "work-experience": [
+    {
+      "id": "streamline",
+      "logo": "/logos/streamline.svg",
+      "role": "Software Engineer",
+      "dates": "PLACEHOLDER",
+      "description": "Intellistack is like family to me - we worked on a lot of things together: from Salesforce Native form building, to the Streamline Data Fabric. I learned a lot here! This is called a \"Data Fabric\" - in other words, it's designed to be the middleman for your enterprise infrastructure and help you do cool workflows!",
+      "product-features": [
+        "Search for a prospect in Salesforce, and file a progress report that's sent to internal staff through email or slack",
+        "Obtain a forecast posted via third-party webhook, and gather affected customers through an internal Database, issuing an automatically created report of stuff they're actively using.",
+        "Onboard an employee to the company using check-point based forms, that only pull up information based on who's viewing it.",
+        "Summarize a large chunk of processed information (via AI) to an outgoing third-party webhook, Google Drive, or Dropbox"
+      ],
+      "personal-experience": [
+        "Worked on Incoming and Outgoing webhooks, providing spaces to test a webhook with mock data",
+        "Constructed a Cards UI compatible with Material React Table's state. (Built from the ground-up!)",
+        "This helped customers use the data search comfortably on mobile devices",
+        "Built the version of the front-end components for Twilio, and Slack integrations",
+        "Re-structured Databricks telemetry for use across the Streamline monorepo",
+        "Became the documenter of MCP servers used throughout the engineering teams",
+        "Constructed agentic workflows for syncing Figma designs and Storybook components",
+        "Customized Microsoft's Monaco editor for use in workflow builders",
+        "Features a custom theme, syntax highlighting for Streamline's templates, drag-to-resize, and a header that shows the language being used"
+      ],
+      "gallery": ["/gallery/streamline/1.svg", "/gallery/streamline/2.svg", "/gallery/streamline/3.svg", "/gallery/streamline/4.svg"]
+    },
+    {
+      "id": "forms-for-salesforce",
+      "logo": "/logos/forms-for-salesforce.svg",
+      "role": "Software Engineer",
+      "dates": "PLACEHOLDER",
+      "description": "This is a native forms builder on top of Salesforce! Here's what it's capable of:",
+      "product-features": [
+        "Forms directly map to Salesforce Objects (Drag & drop!)",
+        "Launch, submit, and save forms for later",
+        "Community Forms",
+        "PCI-Compliant payments across several providers (Stripe, PayPal, Authorize, iATS)",
+        "Integrations with AWS, Dropbox, Azure, Formstack Documents and more",
+        "Wide selection of Pre-made themes (and custom ones too)"
+      ],
+      "personal-experience": [
+        "I was responsible for the Integration settings UI (https://help.formstack.com/hc/en-us/articles/44592554950547-File-Upload-Fields-with-Forms-for-Salesforce)",
+        "We built a payment field for the NativeCloud tier - it's written in React and auto-formats card number, CVV, and date (https://help.formstack.com/hc/en-us/articles/44593251541267-Stripe-Payments-Integration-Forms-for-Salesforce)",
+        "There is also an autosuggest field I helped build alongside the others - it can search, prefill, and obtain Salesforce records live (https://help.formstack.com/hc/en-us/articles/44592647592467-Lookup-Fields)"
+      ],
+      "gallery": ["/gallery/forms-for-salesforce/1.svg", "/gallery/forms-for-salesforce/2.svg", "/gallery/forms-for-salesforce/3.svg", "/gallery/forms-for-salesforce/4.svg"]
+    },
+    {
+      "id": "pace",
+      "logo": "/logos/pace.svg",
+      "role": "Software Engineering Intern",
+      "dates": "PLACEHOLDER",
+      "description": "This is a performance analytics dashboard, designed to review the specific inner-workings for the E3SM project. (And later other projects!) During this internship, this project was assembled from the ground up, utilizing Python, Flask, Bootstrap, MySQL, and Chart.js",
+      "product-features": [],
+      "personal-experience": [
+        "Constructed the UI from the ground up, with the help of Bootstrap, and Chart.js",
+        "Built the main Python parsing utility for interpreting the analytics data",
+        "Containerized the project using Docker",
+        "Data navigable through a custom tree hierarchy. Clicking on a data point on the chart helps to dive deeper into the specifics"
+      ],
+      "gallery": ["/gallery/pace/1.svg", "/gallery/pace/2.svg", "/gallery/pace/3.svg", "/gallery/pace/4.svg"]
+    }
+  ],
+  "questions": [
+    {
+      "q": "What food do you like to eat?!",
+      "a": "I love making pizza from scratch! Ones I love to make are the classic meat lovers, chicken spinach and alfredo pizza, and BBQ chicken + bacon."
+    },
+    {
+      "q": "What editors do you enjoy using?",
+      "a": "I've recently been using Zed for most of my work, and that's despite being a hardcore VSCode user for 12 years! For all other things, vim is also a strong favorite."
+    },
+    {
+      "q": "Do you use Linux?",
+      "a": "Absolutely; I daily Arch on my personal laptop! Got a strong affinity for tiling window managers; started at i3, moved onto Sway, and most recently been exploring Hyprland."
+    }
+  ],
+  "socials": {
+    "linked-in": { "icon": "/socials/linkedin.svg", "link": "https://linkedin.com" },
+    "github": { "icon": "/socials/github.svg", "link": "https://github.com" },
+    "ai-knowledge-base": { "icon": "/socials/github.svg", "link": "https://github.com" }
+  }
+}
