@@ -71,6 +71,7 @@
     {
       "id": "streamline",
       "logo": "/logos/streamline.svg",
+      "link": "https://www.intellistack.com/platform/overview",
       "role": "Software Engineer",
       "dates": "2024 - 2026",
       "intro": "Intellistack is like family to me - we worked on a lot of things together: from Salesforce Native form building, to the Streamline Data Fabric. I learned a lot here!",
@@ -102,6 +103,7 @@
     {
       "id": "forms-for-salesforce",
       "logo": "/logos/formstack.svg",
+      "link": "https://www.formstack.com/products/forms-for-salesforce",
       "role": "Software Engineer",
       "dates": "2019 - 2024",
       "description": "This is a native forms builder on top of Salesforce! Here's what it's capable of:",
@@ -114,9 +116,9 @@
         "Wide selection of Pre-made themes (and custom ones too)"
       ],
       "personal-experience": [
-        "I was responsible for the Integration settings UI (https://help.formstack.com/hc/en-us/articles/44592554950547-File-Upload-Fields-with-Forms-for-Salesforce)",
-        "We built a payment field for the NativeCloud tier - it's written in React and auto-formats card number, CVV, and date (https://help.formstack.com/hc/en-us/articles/44593251541267-Stripe-Payments-Integration-Forms-for-Salesforce)",
-        "There is also an autosuggest field I helped build alongside the others - it can search, prefill, and obtain Salesforce records live (https://help.formstack.com/hc/en-us/articles/44592647592467-Lookup-Fields)"
+        "I was responsible for the [Integration settings UI](https://help.formstack.com/hc/en-us/articles/44592554950547-File-Upload-Fields-with-Forms-for-Salesforce)",
+        "We built a [payment field for the NativeCloud tier](https://help.formstack.com/hc/en-us/articles/44593251541267-Stripe-Payments-Integration-Forms-for-Salesforce) - it's written in React and auto-formats card number, CVV, and date",
+        "There is also [an autosuggest field](https://help.formstack.com/hc/en-us/articles/44592647592467-Lookup-Fields) I helped build alongside the others - it can search, prefill, and obtain Salesforce records live"
       ],
       "gallery": [
         "/gallery/forms-for-salesforce/1.png",
@@ -129,6 +131,7 @@
     {
       "id": "pace",
       "logo": "/logos/pace.svg",
+      "link": "https://pace.ornl.gov",
       "role": "Software Engineering Intern",
       "dates": "Q2 - Q4 2018",
       "description": "This is a performance analytics dashboard, designed to review the specific inner-workings for the E3SM project. (And later other projects!) During this internship, this project was assembled from the ground up, utilizing Python, Flask, Bootstrap, MySQL, and Chart.js",
@@ -149,6 +152,7 @@
     {
       "id": "mcp-chart-viewer",
       "logo": "",
+      "link": "https://github.com/zachMitchellAI/mcp-chart-viewer",
       "role": "Software Engineer",
       "dates": "2026",
       "description": "A project designed for agentic-first Graph viewing! Type in a prompt, search through your favorite resource (Wolfram Alpha, Wikipeida, OpenRouter, or a custom one!), and a structured chart is created for the query live. Loosly inspired by databricks genies",

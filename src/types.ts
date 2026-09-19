@@ -23,6 +23,8 @@ export interface WorkExperience {
   /** Stable slug for the entry (e.g. "streamline"); also used for asset paths. */
   id: string;
   logo: string;
+  /** Optional product/company website; renders the name as an external link. */
+  link?: string;
   role: string;
   dates: string;
   intro?: string;

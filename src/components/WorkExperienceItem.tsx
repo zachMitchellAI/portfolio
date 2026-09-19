@@ -2,10 +2,12 @@ import { useState } from "react";
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import type { WorkExperience } from "../types";
 import { assetUrl } from "../utils/assetUrl";
+import { renderRichText } from "../utils/richText";
 import HueRibbon from "./HueRibbon";
 import ImageCarousel from "./ImageCarousel";
 import SectionCard from "./SectionCard";
@@ -58,7 +60,7 @@ function EntryList({ title, items }: EntryListProps) {
             sx={{ display: "list-item", py: 0.5 }}
           >
             <Typography variant="body1" component="span">
-              {item}
+              {renderRichText(item)}
             </Typography>
           </ListItem>
         ))}
@@ -109,15 +111,38 @@ export default function WorkExperienceItem({ entry }: WorkExperienceItemProps) {
             />
           )}
           <Box>
-            <Typography variant="h4">{companyName}</Typography>
+            {entry.link ? (
+              <Typography
+                component="a"
+                href={entry.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="h4"
+                sx={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 0.75,
+                  color: "inherit",
+                  textDecoration: "none",
+                  "&:hover": { textDecoration: "underline" },
+                }}
+              >
+                {companyName}
+                <OpenInNewIcon sx={{ fontSize: "0.6em", color: "text.secondary" }} />
+              </Typography>
+            ) : (
+              <Typography variant="h4">{companyName}</Typography>
+            )}
             <Typography variant="body2" color="text.secondary">
               {entry.role} · {entry.dates}
             </Typography>
           </Box>
           {entry.intro && (
-            <Typography variant="body1">{entry.intro}</Typography>
+            <Typography variant="body1">{renderRichText(entry.intro)}</Typography>
           )}
-          <Typography variant="body1">{entry.description}</Typography>
+          <Typography variant="body1">
+            {renderRichText(entry.description)}
+          </Typography>
           <ImageCarousel images={entry.gallery} />
           <EntryList
             title="Product features"
