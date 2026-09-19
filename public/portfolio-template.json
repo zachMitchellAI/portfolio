@@ -60,6 +60,11 @@
       "name": "TanStack",
       "img-src": "/techstack/tanstack.svg",
       "link": "https://tanstack.com"
+    },
+    {
+      "name": "Vuetify",
+      "img-src": "/techstack/vuetify.svg",
+      "link": "https://vuetifyjs.com"
     }
   ],
   "work-experience": [
@@ -67,8 +72,9 @@
       "id": "streamline",
       "logo": "/logos/streamline.svg",
       "role": "Software Engineer",
-      "dates": "PLACEHOLDER",
-      "description": "Intellistack is like family to me - we worked on a lot of things together: from Salesforce Native form building, to the Streamline Data Fabric. I learned a lot here! This is called a \"Data Fabric\" - in other words, it's designed to be the middleman for your enterprise infrastructure and help you do cool workflows!",
+      "dates": "2024 - 2026",
+      "intro": "Intellistack is like family to me - we worked on a lot of things together: from Salesforce Native form building, to the Streamline Data Fabric. I learned a lot here!",
+      "description": "This is called a \"Data Fabric\" - in other words, it's designed to be the middleman for your enterprise infrastructure and help you do cool workflows!",
       "product-features": [
         "Search for a prospect in Salesforce, and file a progress report that's sent to internal staff through email or slack",
         "Obtain a forecast posted via third-party webhook, and gather affected customers through an internal Database, issuing an automatically created report of stuff they're actively using.",
@@ -87,17 +93,17 @@
         "Features a custom theme, syntax highlighting for Streamline's templates, drag-to-resize, and a header that shows the language being used"
       ],
       "gallery": [
-        "/gallery/streamline/1.svg",
-        "/gallery/streamline/2.svg",
-        "/gallery/streamline/3.svg",
-        "/gallery/streamline/4.svg"
+        "/gallery/streamline/1.png",
+        "/gallery/streamline/2.png",
+        "/gallery/streamline/3.png",
+        "/gallery/streamline/4.png"
       ]
     },
     {
       "id": "forms-for-salesforce",
-      "logo": "/logos/forms-for-salesforce.svg",
+      "logo": "/logos/formstack.svg",
       "role": "Software Engineer",
-      "dates": "PLACEHOLDER",
+      "dates": "2019 - 2024",
       "description": "This is a native forms builder on top of Salesforce! Here's what it's capable of:",
       "product-features": [
         "Forms directly map to Salesforce Objects (Drag & drop!)",
@@ -113,17 +119,18 @@
         "There is also an autosuggest field I helped build alongside the others - it can search, prefill, and obtain Salesforce records live (https://help.formstack.com/hc/en-us/articles/44592647592467-Lookup-Fields)"
       ],
       "gallery": [
-        "/gallery/forms-for-salesforce/1.svg",
-        "/gallery/forms-for-salesforce/2.svg",
-        "/gallery/forms-for-salesforce/3.svg",
-        "/gallery/forms-for-salesforce/4.svg"
+        "/gallery/forms-for-salesforce/1.png",
+        "/gallery/forms-for-salesforce/2.png",
+        "/gallery/forms-for-salesforce/3.png",
+        "/gallery/forms-for-salesforce/4.png",
+        "/gallery/forms-for-salesforce/5.png"
       ]
     },
     {
       "id": "pace",
       "logo": "/logos/pace.svg",
       "role": "Software Engineering Intern",
-      "dates": "PLACEHOLDER",
+      "dates": "Q2 - Q4 2018",
       "description": "This is a performance analytics dashboard, designed to review the specific inner-workings for the E3SM project. (And later other projects!) During this internship, this project was assembled from the ground up, utilizing Python, Flask, Bootstrap, MySQL, and Chart.js",
       "product-features": [],
       "personal-experience": [
@@ -133,10 +140,32 @@
         "Data navigable through a custom tree hierarchy. Clicking on a data point on the chart helps to dive deeper into the specifics"
       ],
       "gallery": [
-        "/gallery/pace/1.svg",
-        "/gallery/pace/2.svg",
-        "/gallery/pace/3.svg",
-        "/gallery/pace/4.svg"
+        "/gallery/pace/1.png",
+        "/gallery/pace/2.png",
+        "/gallery/pace/3.png",
+        "/gallery/pace/4.png"
+      ]
+    },
+    {
+      "id": "mcp-chart-viewer",
+      "logo": "",
+      "role": "Software Engineer",
+      "dates": "2026",
+      "description": "A project designed for agentic-first Graph viewing! Type in a prompt, search through your favorite resource (Wolfram Alpha, Wikipeida, OpenRouter, or a custom one!), and a structured chart is created for the query live. Loosly inspired by databricks genies",
+      "product-features": [
+        "Makes use of Vuetify with an automatic dark / light mode",
+        "Chart results, and tabs are saved in-browser, creating a stateless experience for the back-end",
+        "Copy the chart data, and paste it back into the chatbox to share/edit/move the results!",
+        "Utilizes LangChain DeepAgents: Orchestrator, data gatherer, and chart renderer subagents.",
+        "Dedicated UI for adding MCP servers, providing per-tab configurations, instead of having to write one JSON file for each setup.",
+        "Configure any LLM for orchestration or subagent work using openrouter"
+      ],
+      "personal-experience": [],
+      "gallery": [
+        "/gallery/mcp-chart-viewer/1.png",
+        "/gallery/mcp-chart-viewer/2.png",
+        "/gallery/mcp-chart-viewer/3.png",
+        "/gallery/mcp-chart-viewer/4.png"
       ]
     }
   ],
@@ -147,11 +176,27 @@
     },
     {
       "q": "What editors do you enjoy using?",
-      "a": "I've recently been using Zed for most of my work, and that's despite being a hardcore VSCode user for 12 years! For all other things, vim is also a strong favorite."
+      "a": "I've recently been using Zed for most of my work, and that's despite being a hardcore VSCode user for 12 years! For all other things, Vim is also a strong favorite."
     },
     {
       "q": "Do you use Linux?",
       "a": "Absolutely; I daily Arch on my personal laptop! Got a strong affinity for tiling window managers; started at i3, moved onto Sway, and most recently been exploring Hyprland."
+    },
+    {
+      "q": "'Jif' or 'Gif'?",
+      "a": "Jif all the way! (Sorry not sorry)"
+    },
+    {
+      "q": "Where do you like to travel?",
+      "a": "All over the place, I love a good Library to sit down and think. There are many great coffee shops around, but let's not forget the amazing parks in Knoxville too! Fresh air is perfect for the mind to keep things sharp."
+    },
+    {
+      "q": "What's your favorite kind of apple?",
+      "a": "Oddly specific question, but my oddly specific answer is pink lady"
+    },
+    {
+      "q": "Is it true that most people will ask if go by Zach or Zachary?",
+      "a": "Oh yes, in fact there's roughly a 90% chance it'll be asked. The other day the barista asked just that while setting up coffee!"
     }
   ],
   "socials": {

@@ -3,6 +3,7 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import type { PortfolioData } from "../types";
 import WorkExperienceItem from "./WorkExperienceItem";
+import SectionCard from "./SectionCard";
 
 export interface WorkExperienceProps {
   data: PortfolioData;
@@ -24,9 +25,14 @@ export default function WorkExperience({ data }: WorkExperienceProps) {
   return (
     <Stack component="section" spacing={3} sx={{ width: "100%", px: 2, py: 6 }}>
       <Box sx={{ width: "100%", maxWidth: 760, mx: "auto" }}>
-        <Typography variant="h3" sx={{ textAlign: "left" }}>
-          {SECTION_HEADER}
-        </Typography>
+        <SectionCard>
+          <Typography
+            variant="h3"
+            sx={{ textAlign: "left", fontSize: { xs: "3rem", md: "2rem" } }}
+          >
+            {SECTION_HEADER}
+          </Typography>
+        </SectionCard>
         <Stack spacing={8} sx={{ mt: 6 }}>
           {data["work-experience"].map((entry) => (
             <WorkExperienceItem key={entry.id} entry={entry} />

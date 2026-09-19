@@ -94,28 +94,17 @@ export default function WorkExperienceItem({ entry }: WorkExperienceItemProps) {
           inner Stack preserves the original spacing between content blocks. */}
       <SectionCard>
         <Stack spacing={2}>
-          {showLogo ? (
+          {showLogo && (
             <Box
               component="img"
               src={assetUrl(entry.logo)}
               alt={companyName}
               onError={() => setLogoFailed(true)}
               sx={{
-                width: { xs: "60%", md: "30%" },
+                width: { xs: "60%", md: "40%" },
                 height: "auto",
                 display: "block",
                 filter: invertLogo ? "invert(1)" : "none",
-              }}
-            />
-          ) : (
-            <Box
-              aria-hidden="true"
-              sx={{
-                width: { xs: "60%", md: "30%" },
-                height: 72,
-                border: "2px dashed",
-                borderColor: "divider",
-                borderRadius: 2,
               }}
             />
           )}
@@ -125,6 +114,9 @@ export default function WorkExperienceItem({ entry }: WorkExperienceItemProps) {
               {entry.role} · {entry.dates}
             </Typography>
           </Box>
+          {entry.intro && (
+            <Typography variant="body1">{entry.intro}</Typography>
+          )}
           <Typography variant="body1">{entry.description}</Typography>
           <ImageCarousel images={entry.gallery} />
           <EntryList

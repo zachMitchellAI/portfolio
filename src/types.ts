@@ -25,6 +25,7 @@ export interface WorkExperience {
   logo: string;
   role: string;
   dates: string;
+  intro?: string;
   description: string;
   "product-features": string[];
   "personal-experience": string[];
