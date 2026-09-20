@@ -56,10 +56,6 @@ export default function Intro({ data }: IntroProps) {
             {intro.header}
           </Typography>
 
-          <Typography variant="h4" component="h4">
-            {intro.sub}
-          </Typography>
-
           <Typography variant="body1" sx={{ mt: 2 }}>
             {intro.body}
           </Typography>
