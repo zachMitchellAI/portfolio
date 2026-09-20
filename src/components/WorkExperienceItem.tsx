@@ -41,10 +41,11 @@ function companyNameFromId(id: string): string {
 interface EntryListProps {
   title: string;
   items: string[];
+  prelude?: string;
 }
 
 /** Shared bullet-list block ("Product features" / "Personal experience"). */
-function EntryList({ title, items }: EntryListProps) {
+function EntryList({ title, items, prelude }: EntryListProps) {
   if (items.length === 0) {
     return null;
   }
@@ -52,6 +53,9 @@ function EntryList({ title, items }: EntryListProps) {
   return (
     <Box>
       <Typography variant="h6">{title}</Typography>
+
+      {prelude && <Typography variant="body1">{prelude}</Typography>}
+
       <List sx={{ listStyleType: "disc", pl: 3 }}>
         {items.map((item, index) => (
           <ListItem
@@ -128,7 +132,9 @@ export default function WorkExperienceItem({ entry }: WorkExperienceItemProps) {
                 }}
               >
                 {companyName}
-                <OpenInNewIcon sx={{ fontSize: "0.6em", color: "text.secondary" }} />
+                <OpenInNewIcon
+                  sx={{ fontSize: "0.6em", color: "text.secondary" }}
+                />
               </Typography>
             ) : (
               <Typography variant="h4">{companyName}</Typography>
@@ -138,7 +144,9 @@ export default function WorkExperienceItem({ entry }: WorkExperienceItemProps) {
             </Typography>
           </Box>
           {entry.intro && (
-            <Typography variant="body1">{renderRichText(entry.intro)}</Typography>
+            <Typography variant="body1">
+              {renderRichText(entry.intro)}
+            </Typography>
           )}
           <Typography variant="body1">
             {renderRichText(entry.description)}
@@ -151,6 +159,7 @@ export default function WorkExperienceItem({ entry }: WorkExperienceItemProps) {
           <EntryList
             title="Personal experience"
             items={entry["personal-experience"]}
+            prelude={entry["pe-prelude"]}
           />
         </Stack>
       </SectionCard>

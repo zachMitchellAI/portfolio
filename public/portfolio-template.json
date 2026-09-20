@@ -75,13 +75,14 @@
       "role": "Software Engineer",
       "dates": "2024 - 2026",
       "intro": "Intellistack is like family to me - we worked on a lot of things together: from Salesforce Native form building, to the Streamline Data Fabric. I learned a lot here!",
-      "description": "This is called a \"Data Fabric\" - in other words, it's designed to be the middleman for your enterprise infrastructure and help you do cool workflows!",
+      "description": "This is called a \"Data Fabric\" - in other words, it's designed to be the middleman for your enterprise infrastructure and help you do cool workflows! Here are some examples:",
       "product-features": [
         "Search for a prospect in Salesforce, and file a progress report that's sent to internal staff through email or slack",
-        "Obtain a forecast posted via third-party webhook, and gather affected customers through an internal Database, issuing an automatically created report of stuff they're actively using.",
-        "Onboard an employee to the company using check-point based forms, that only pull up information based on who's viewing it.",
+        "Obtain a forecast posted via third-party webhook, and gather affected customers through an internal Database, issuing an automatically created report of stuff they're actively using",
+        "Onboard an employee to the company using check-point based forms, that only pull up information based on who's viewing it",
         "Summarize a large chunk of processed information (via AI) to an outgoing third-party webhook, Google Drive, or Dropbox"
       ],
+      "pe-prelude": "Here are some things I did to help build streamline!",
       "personal-experience": [
         "Worked on Incoming and Outgoing webhooks, providing spaces to test a webhook with mock data",
         "Constructed a Cards UI compatible with Material React Table's state. (Built from the ground-up!)",
@@ -90,8 +91,7 @@
         "Re-structured Databricks telemetry for use across the Streamline monorepo",
         "Became the documenter of MCP servers used throughout the engineering teams",
         "Constructed agentic workflows for syncing Figma designs and Storybook components",
-        "Customized Microsoft's Monaco editor for use in workflow builders",
-        "Features a custom theme, syntax highlighting for Streamline's templates, drag-to-resize, and a header that shows the language being used"
+        "Customized Microsoft's Monaco editor for use in workflow builders. It features a custom theme, syntax highlighting for Streamline's templates, drag-to-resize, and a header that shows the language being used"
       ],
       "gallery": [
         "/gallery/streamline/1.png",
@@ -115,6 +115,7 @@
         "Integrations with AWS, Dropbox, Azure, Formstack Documents and more",
         "Wide selection of Pre-made themes (and custom ones too)"
       ],
+      "pe-prelude": "Some of the favorite things I did with Forms for Salesforce:",
       "personal-experience": [
         "I was responsible for the [Integration settings UI](https://help.formstack.com/hc/en-us/articles/44592554950547-File-Upload-Fields-with-Forms-for-Salesforce)",
         "We built a [payment field for the NativeCloud tier](https://help.formstack.com/hc/en-us/articles/44593251541267-Stripe-Payments-Integration-Forms-for-Salesforce) - it's written in React and auto-formats card number, CVV, and date",
@@ -136,11 +137,12 @@
       "dates": "Q2 - Q4 2018",
       "description": "This is a performance analytics dashboard, designed to review the specific inner-workings for the E3SM project. (And later other projects!) During this internship, this project was assembled from the ground up, utilizing Python, Flask, Bootstrap, MySQL, and Chart.js",
       "product-features": [],
+      "pe-prelude": "During this internship, everything was created from start to finish! Here are some things I did during that adventure:",
       "personal-experience": [
-        "Constructed the UI from the ground up, with the help of Bootstrap, and Chart.js",
-        "Built the main Python parsing utility for interpreting the analytics data",
-        "Containerized the project using Docker",
-        "Data navigable through a custom tree hierarchy. Clicking on a data point on the chart helps to dive deeper into the specifics"
+        "I constructed the UI from the ground up, with the help of Bootstrap, and Chart.js",
+        "On the back-end, I also helped to build the analytics parser, which is written in python!",
+        "We also containerized the project using Docker, which helped to deploy it fast anywhere with a self-building blueprint",
+        "Data can be navigated through a custom tree hierarchy. Clicking on a data point on the chart helps to dive deeper into the specifics"
       ],
       "gallery": [
         "/gallery/pace/1.png",

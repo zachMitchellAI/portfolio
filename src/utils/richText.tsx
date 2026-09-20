@@ -30,6 +30,9 @@ export function renderRichText(text: string): ReactNode {
         href={url}
         target="_blank"
         rel="noopener noreferrer"
+        sx={{
+          color: "#acb6ff",
+        }}
       >
         {label}
       </Link>,

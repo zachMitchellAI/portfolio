@@ -33,7 +33,7 @@ export default function SectionCard({ children, sx }: SectionCardProps) {
         {
           borderRadius: 4,
           p: { xs: 3, md: 4 },
-          bgcolor: isDark ? "rgba(255, 255, 255, 0.14)" : "rgba(0, 0, 0, 0.5)",
+          bgcolor: isDark ? "rgba(255, 255, 255, 0.2)" : "rgba(0, 0, 0, 0.6)",
           // LIGHT mode only: the card is black-translucent, so every piece of
           // text inside must go white. MUI Typography/components resolve their
           // colors through the CSS-vars theme (theme.vars emits

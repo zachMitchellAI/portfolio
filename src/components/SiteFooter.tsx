@@ -24,6 +24,9 @@ export default function SiteFooter({ socials }: SiteFooterProps) {
         textAlign: "center",
       }}
     >
+      <Typography variant="h4" color="text.secondary">
+        Let's stay in touch!
+      </Typography>
       <Socials socials={socials} />
       <Typography variant="body2" color="text.secondary">
         © {new Date().getFullYear()} Zach

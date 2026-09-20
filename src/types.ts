@@ -30,6 +30,7 @@ export interface WorkExperience {
   intro?: string;
   description: string;
   "product-features": string[];
+  "pe-prelude"?: string;
   "personal-experience": string[];
   gallery: string[];
 }
