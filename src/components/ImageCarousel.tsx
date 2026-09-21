@@ -101,7 +101,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
             )}
           </Box>
         </Fade>
-        {hasControls && (
+        {/*{hasControls && (
           <IconButton
             aria-label="previous image"
             onClick={goPrev}
@@ -119,8 +119,8 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
           >
             <ChevronLeftIcon fontSize="small" />
           </IconButton>
-        )}
-        {hasControls && (
+        )}*/}
+        {/*{hasControls && (
           <IconButton
             aria-label="next image"
             onClick={goNext}
@@ -138,7 +138,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
           >
             <ChevronRightIcon fontSize="small" />
           </IconButton>
-        )}
+        )}*/}
       </Box>
       {hasControls && (
         <MobileStepper

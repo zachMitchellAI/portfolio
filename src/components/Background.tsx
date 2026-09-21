@@ -72,7 +72,7 @@ export default function Background() {
           gyroControls: false,
           minHeight: 200.0,
           minWidth: 200.0,
-          points: 12,
+          points: 5,
           maxDistance: 22,
           spacing: 18,
           showDots: true,
