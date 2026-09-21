@@ -49,14 +49,19 @@ function App() {
 
   useEffect(() => {
     let cancelled = false;
-    loadPortfolio()
-      .then((data) => {
+
+    const load = async () => {
+      try {
+        const data = await loadPortfolio();
         if (!cancelled) setState({ status: "success", data });
-      })
-      .catch((error: unknown) => {
+      } catch (error: unknown) {
         console.error("[App] Failed to load portfolio data:", error);
         if (!cancelled) setState({ status: "error" });
-      });
+      }
+    };
+
+    void load();
+
     return () => {
       cancelled = true;
     };

@@ -42,8 +42,9 @@ export default function Background() {
     // guarantees the `window.THREE` assignment above has run before the UMD
     // module evaluates. The module stays cached, so re-running this effect on
     // a theme (mode) change resolves immediately.
-    import("vanta/dist/vanta.net.min")
-      .then((mod) => {
+    const init = async () => {
+      try {
+        const mod = await import("vanta/dist/vanta.net.min");
         if (disposed) {
           // Destroyed before the module finished loading (React StrictMode
           // double-mount in dev) — bail out instead of leaking a canvas.
@@ -97,12 +98,14 @@ export default function Background() {
             mode === "dark" ? THREE.AdditiveBlending : THREE.NormalBlending;
           material.needsUpdate = true;
         });
-      })
-      .catch((error: unknown) => {
+      } catch (error: unknown) {
         // Module load/WebGL failure: the container keeps its solid background
         // color so the page remains usable; surface the cause in the console.
         console.warn("[Background] Vanta NET failed to initialize:", error);
-      });
+      }
+    };
+
+    void init();
 
     // Cleanup is mandatory: React 19 StrictMode double-mounts effects in dev.
     return () => {

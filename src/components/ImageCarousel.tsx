@@ -8,6 +8,17 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ImageNotSupportedOutlinedIcon from "@mui/icons-material/ImageNotSupportedOutlined";
 import { assetUrl } from "../utils/assetUrl";
 
+/**
+ * Chevron controls sit on the translucent SectionCard surface, so they stay
+ * white in both color modes. IconButton's default color resolves through
+ * `--mui-palette-action-active` (black-ish in light mode), which SectionCard's
+ * light-mode var overrides don't cover — hence the explicit colors here.
+ */
+const chevronButtonSx = {
+  color: "#ffffff",
+  "&.Mui-disabled": { color: "rgba(255, 255, 255, 0.5)" },
+};
+
 export interface ImageCarouselProps {
   /** Gallery image paths (public/ relative); resolved through `assetUrl`. */
   images: string[];
@@ -152,6 +163,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
               onClick={goPrev}
               disabled={atStart}
               size="small"
+              sx={chevronButtonSx}
             >
               <ChevronLeftIcon fontSize="small" />
             </IconButton>
@@ -162,6 +174,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
               onClick={goNext}
               disabled={atEnd}
               size="small"
+              sx={chevronButtonSx}
             >
               <ChevronRightIcon fontSize="small" />
             </IconButton>
