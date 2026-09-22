@@ -64,6 +64,11 @@
       "name": "Vuetify",
       "img-src": "/techstack/vuetify.svg",
       "link": "https://vuetifyjs.com"
+    },
+    {
+      "name": "Salesforce",
+      "img-src": "/techstack/salesforce.svg",
+      "link": "https://www.salesforce.com"
     }
   ],
   "work-experience": [
